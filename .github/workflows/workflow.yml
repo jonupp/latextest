@@ -1,0 +1,17 @@
+name: Generate PDF
+on: [push]
+jobs:
+    compile:
+        runs-on: miktex/miktex
+        steps:
+            - name: Set up Git repository
+              uses: actions/checkout@v2
+            - run: echo "Start compiling"
+            - run: texify -p main.tex
+            - run: echo "Finished compiling"
+            - name: 'Upload Artifact'
+              uses: actions/upload-artifact@v2
+              with:
+                name: dokumentationpdf
+                path: main.pdf
+                retention-days: 5
