@@ -1,0 +1,25 @@
+\documentclass{report}
+
+\usepackage{titlesec}
+\usepackage[nottoc,numbib]{tocbibind}
+
+\title{Technischer Bericht}
+\author{Abinas Kuganathan und Jonas Knupp}
+\date{\today}
+
+\titleformat{\chapter}%
+  {\normalfont\bfseries\Huge}{\thechapter.}{10pt}{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\include{ausgangslage/ausgangslage}
+
+\bibliographystyle{plain}
+\bibliography{ref}
+
+\include{sw_anhaenge/sw_anhaenge}
+
+\end{document}
